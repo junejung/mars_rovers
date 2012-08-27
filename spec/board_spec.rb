@@ -4,17 +4,15 @@ require './board.rb'
 describe 'Board' do 
 
 	context "initializing" do
-		context 'when it is initialized with a String' do
-			it 'should raise error when argument is not a String' do
-				expect{
-					Board.new({:width => 5, :height => 5})
-				}.to raise_error
-			end
-			it 'should take a String as an argument' do
-				expect{
-					Board.new("5 5")
-				}.to_not raise_error
-			end
+		it 'should raise error when argument is not a String' do
+			expect{
+				Board.new({:width => 5, :height => 5})
+			}.to raise_error
+		end
+		it 'should take a String as an argument' do
+			expect{
+				Board.new("5 5")
+			}.to_not raise_error
 		end
 
 		context 'creating a board' do

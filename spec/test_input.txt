@@ -1,1 +1,5 @@
-asdfasdfasdf
+9 9
+1 5 N
+LMLMLMLMM
+7 3 E
+MMRMMRMRRM
