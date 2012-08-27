@@ -11,9 +11,9 @@ class Board
 		@horizontal = size_arry[0].to_i
 		@vertical = size_arry[1].to_i
 
-		@horizontal.times { |h| @board << [] }
+		(@horizontal+1).times { |h| @board << [] }
 
-		@vertical.times do |v|
+		(@vertical+1).times do |v|
 			(@board.length).times { |i| @board[i] << [] }
 		end
 	end

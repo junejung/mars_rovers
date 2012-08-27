@@ -14,12 +14,13 @@ class Mars_rover
 			end 
 		}
 		parse_document
+
 	end
 
 	def self.parse_document
 		@board_size = @document.shift
 		until @document.empty?
-			Rover.new(@document.shift, @document.shift)
+			Rover.new(@document.shift[0], @document.shift[0])
 		end
 	end
 
