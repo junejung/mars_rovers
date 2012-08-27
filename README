@@ -1,0 +1,10 @@
+Hello,
+
+Welcome to my version of mars rovers.
+
+
+To setup and run the application, follow these steps:
+
+1.  bundle
+2.  rspec spec
+
