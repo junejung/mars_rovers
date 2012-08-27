@@ -13,18 +13,16 @@ class Mars_rover
 				e.gsub!("\n","") 
 			end 
 		}
+		parse_document
 	end
 
-	def clean_up
-		@board_size = @document[0]
-		@starting_point, @movement = @document.partition.with_index {|e, i| i.odd? }
-		@movement.shift
+	def self.parse_document
+		@board_size = @document.shift
+		until @document.empty?
+			Rover.new(@document.shift, @document.shift)
+		end
 	end
 
 end
 
 n = Mars_rover.new('input.txt')
-m = n.clean_up
-puts n.board_size.inspect
-puts n.starting_point.inspect
-puts n.movement.inspect
