@@ -42,8 +42,5 @@ describe 'Mars_rover' do
 	 	it 'should have the same length of starting point and movement Arrays' do
 	 		@mars_rover.starting_point.length.should equal @mars_rover.movement.length
 	 	end
-		# it 'should have vertical numebr of arrays' do
-		# 	@mars_rover.board[0].length.should equal @mars_rover.vertical
-		# end
 	 end
 end
