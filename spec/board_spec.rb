@@ -21,10 +21,10 @@ describe 'Board' do
 				@mars_rover = Board.new("10 4")
 			end
 			it 'should set first number argument as horizontal integer' do
-				@mars_rover.horizontal.should == 10
+				@mars_rover.horizontal.should == 11
 			end
 			it 'should set first number argument as vertical integer' do
-				@mars_rover.vertical.should == 4
+				@mars_rover.vertical.should == 5
 			end
 			it 'should create board array' do
 				@mars_rover.board.should be_an_instance_of Array

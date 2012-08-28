@@ -1,3 +1,5 @@
+require './rover.rb'
+
 class Mars_rover
 	attr_accessor :document, :board_size, :starting_point, :movement
 
@@ -14,16 +16,18 @@ class Mars_rover
 			end 
 		}
 		parse_document
-
 	end
 
-	def self.parse_document
+	def parse_document
 		@board_size = @document.shift
 		until @document.empty?
-			Rover.new(@document.shift[0], @document.shift[0])
+			Rover.new(@document.shift, @document.shift)
 		end
 	end
 
+	# def final_position
+	# 	@final_position = "#{@postion.join(" ")}" + ""
+	# end
 end
 
 n = Mars_rover.new('input.txt')

@@ -7,13 +7,15 @@ class Board
 		end
 
 		size_arry = size.split(" ")
+		h = size_arry[0].to_i
+		v = size_arry[1].to_i
 		@board = []
-		@horizontal = size_arry[0].to_i
-		@vertical = size_arry[1].to_i
+		@horizontal = h+1
+		@vertical = v+1
 
-		(@horizontal+1).times { |h| @board << [] }
+		@horizontal.times { |h| @board << [] }
 
-		(@vertical+1).times do |v|
+		@vertical.times do |v|
 			(@board.length).times { |i| @board[i] << [] }
 		end
 	end

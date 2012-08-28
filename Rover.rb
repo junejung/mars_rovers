@@ -1,6 +1,6 @@
 class Rover
 	attr_accessor :position, :direction
-
+	DIRECTIONS = ["N","E","S","W"]
 	def initialize(start_position, instructions)
 		start_position(start_position)
 		make_matrix
@@ -21,7 +21,7 @@ class Rover
 		x = start_input[0].to_i
 		y = start_input[1].to_i
 		@position = [x, y]
-		@direction = ["N","E","S","W"].index(start_input[2])
+		@direction = DIRECTIONS.index(start_input[2])
 	end
 
 	def execute_instructions(instructions)
@@ -29,7 +29,7 @@ class Rover
 			case instruction
 			when "M"
 				move
-			when "L"					
+			when "L"
 				turn_left
 			when "R"
 				turn_right
@@ -48,9 +48,4 @@ class Rover
 	def move
 		@move_matrix[@direction].call
 	end
-
 end
-
-a = Rover.new("1 2 N", "LMLMLMLMM")
-puts a.position
-puts a.direction
