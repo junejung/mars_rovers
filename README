@@ -7,4 +7,4 @@ To setup and run the application, follow these steps:
 
 1.  bundle
 2.  rspec spec
-
+3.	ruby run_me.rb -file name
