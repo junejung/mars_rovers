@@ -1,6 +1,6 @@
 class Rover
 	attr_accessor :position, :direction
-	DIRECTION_METRIX = ["N","E","S","W"]
+	DIRECTION_MATRIX = ["N","E","S","W"]
 	def initialize(start_position, instructions)
 		start_position(start_position)
 		make_matrix
@@ -22,7 +22,7 @@ class Rover
 
 	def final_position
 		position_string = @position.join(' ')
-		direction_letter = DIRECTION_METRIX[@direction]
+		direction_letter = DIRECTION_MATRIX[@direction]
 		return "#{position_string} #{direction_letter}"
 	end
 
@@ -55,6 +55,6 @@ class Rover
 		x = start_input[0].to_i
 		y = start_input[1].to_i
 		@position = [x, y]
-		@direction = DIRECTION_METRIX.index(start_input[2])
+		@direction = DIRECTION_MATRIX.index(start_input[2])
 	end
 end
