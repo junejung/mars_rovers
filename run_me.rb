@@ -10,19 +10,20 @@ end
 @document.each { |e| 
 	e.gsub("\n","")  
 }
-@board = Board.new(@document.shift)
+board = Board.new(@document.shift)
 
 until @document.empty?
-	rover = Rover.new(@document.shift, @document.shift)
-	@board.save_final_position(rover)
+	origin = @document.shift
+	instructions = @document.shift
+	rover = Rover.new(board, origin)
+	rover.execute_instructions(instructions)
 end
-
 
 
 puts "Printing data for #{file_name}:"
 
 output_string = ''
-@board.present_entities.each do |entity|
+board.present_entities.each do |entity|
 	output_string += entity.join(' ') + "\n"
 end
 puts output_string
