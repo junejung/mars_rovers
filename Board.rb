@@ -21,6 +21,6 @@ class Board
 	end
 
 	def save_final_position(rover)
-		@present_entities << rover.final_position.split(" ")
+		@present_entities << rover.final_position.split
 	end
 end
