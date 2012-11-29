@@ -17,10 +17,5 @@ class Board
 				@board[i] << []
 			end
 		end
-		@present_entities = []
-	end
-
-	def save_final_position(rover)
-		@present_entities << rover.final_position.split
 	end
 end

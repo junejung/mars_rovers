@@ -1,11 +1,9 @@
 class Rover
 	attr_accessor :position, :direction
-	DIRECTION_MATRIX = ["N","E","S","W"]
 	def initialize(board, origin)
 		@board = board
 		set_origin(origin)
 		make_matrix
-		final_position
 	end
 
 	def turn_right
@@ -20,12 +18,6 @@ class Rover
 		@move_matrix[@direction].call
 	end
 
-	def final_position
-		position_string = @position.join(' ')
-		direction_letter = DIRECTION_MATRIX[@direction]
-		return "#{position_string} #{direction_letter}"
-	end
-
 	def execute_instructions(instructions)
 		instructions.split("").each do |instruction|
 			case instruction
@@ -37,7 +29,6 @@ class Rover
 				turn_right
 			end
 		end
-		@board.save_final_position(self)
 	end
 
 	def check(current_position)
