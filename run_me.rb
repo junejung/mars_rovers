@@ -1,4 +1,5 @@
-require './controller.rb'
+require './Board.rb'
+require './rover.rb'
 
 file_name = ARGV[0] || 'input.txt'
 file_name = "./#{file_name}"
