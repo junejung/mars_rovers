@@ -1,17 +1,17 @@
 class Rover
 	attr_accessor :position, :direction
-	def initialize(board, origin)
+	def initialize(board, x, y, direction)
 		@board = board
-		set_origin(origin)
+		set_origin(x, y, direction)
 		make_matrix
 	end
 
 	def turn_right
-		@direction = @direction == 3? 0 : (@direction + 1)
+		@direction = @direction == 3 ? 0 : @direction + 1
 	end
 
 	def turn_left
-		@direction = @direction == 0? 3 : (@direction - 1)
+		@direction = @direction == 0 ? 3 : @direction - 1
 	end
 
 	def move
@@ -48,11 +48,8 @@ class Rover
 		}
 	end
 
-	def set_origin(origin)
-		origin = origin.split(" ")
-		x = origin[0].to_i
-		y = origin[1].to_i
+	def set_origin(x, y, direction)
 		@position = [x, y]
-		@direction = DIRECTION_MATRIX.index(origin[2])
+		@direction = DIRECTION_MATRIX.index(direction)
 	end
 end
