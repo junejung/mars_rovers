@@ -15,7 +15,7 @@ until lines.empty?
     start = lines.shift.split(" ")
 	x = start[0].to_i
 	y = start[1].to_i
-	direction = start[2]
+	direction = DIRECTION_MATRIX.index(start[2])
 	instructions = lines.shift
 	rover = Rover.new(board, x, y, direction)
 	rover.execute_instructions(instructions)

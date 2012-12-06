@@ -2,8 +2,14 @@ class Rover
 	attr_accessor :position, :direction
 	def initialize(board, x, y, direction)
 		@board = board
-		set_origin(x, y, direction)
-		make_matrix
+		@position = [x, y]
+		@direction = direction
+		@move_matrix = [
+			lambda {@position[1] += 1},
+			lambda {@position[0] += 1},
+			lambda {@position[1] -= 1},
+			lambda {@position[0] -= 1}
+		]
 	end
 
 	def turn_right
@@ -37,19 +43,4 @@ class Rover
 		end
 	end
 
-	private
-
-	def make_matrix
-		@move_matrix = {
-			0 => lambda {@position[1] += 1},
-			1 => lambda {@position[0] += 1},
-			2 => lambda {@position[1] -= 1},
-			3 => lambda {@position[0] -= 1}
-		}
-	end
-
-	def set_origin(x, y, direction)
-		@position = [x, y]
-		@direction = DIRECTION_MATRIX.index(direction)
-	end
 end
