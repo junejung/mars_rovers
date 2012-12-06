@@ -6,7 +6,10 @@ file_name = "./#{file_name}"
 raise "Can't find file." unless File.exists? file_name
 
 lines = File.readlines(file_name).each { |l| l.gsub("\n","") }
-board = Board.new(lines.shift)
+size = lines.shift.split(" ")
+horizontal = size[0].to_i + 1
+vertical = size[1].to_i + 1
+board = Board.new(horizontal, vertical)
 
 puts "Printing data for #{file_name}:"
 
