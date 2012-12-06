@@ -18,6 +18,7 @@ class Rover
 		dimention = (direction + 1) % 2 
 		sign = @direction <= 1 ? 1 : -1                                                       
 		@position[dimention] += sign
+		@board.crush_dictector(@position)
 	end
 
 	def execute_instructions(instructions)
