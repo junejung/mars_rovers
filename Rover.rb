@@ -32,10 +32,4 @@ class Rover
 			end
 		end
 	end
-
-	def check(current_position)
-		if current_position == @present_entities[0]
-			"Rover crushed"
-		end
-	end
 end
