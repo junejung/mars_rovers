@@ -7,11 +7,11 @@ class Rover
 	end
 
 	def turn_right
-		@direction = @direction == 3 ? 0 : @direction + 1
+		@direction = (@direction + 1) % 4
 	end
 
 	def turn_left
-		@direction = @direction == 0 ? 3 : @direction - 1
+		@direction = (@direction - 1) % 4
 	end
 
 	def move
