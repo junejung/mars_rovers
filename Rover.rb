@@ -4,12 +4,6 @@ class Rover
 		@board = board
 		@position = [x, y]
 		@direction = direction
-		@move_matrix = [
-			lambda {@position[1] += 1},
-			lambda {@position[0] += 1},
-			lambda {@position[1] -= 1},
-			lambda {@position[0] -= 1}
-		]
 	end
 
 	def turn_right
@@ -21,7 +15,9 @@ class Rover
 	end
 
 	def move
-		@move_matrix[@direction].call
+		dimention = (direction + 1) % 2 
+		sign = @direction <= 1 ? 1 : -1                                                       
+		@position[dimention] += sign
 	end
 
 	def execute_instructions(instructions)
@@ -42,5 +38,4 @@ class Rover
 			"Rover crushed"
 		end
 	end
-
 end
