@@ -15,10 +15,11 @@ class Rover
 	end
 
 	def move
+		@board.remove_rover(self)
 		dimention = (direction + 1) % 2 
-		sign = @direction <= 1 ? 1 : -1                                                       
+		sign = @direction <= 1 ? 1 : -1
 		@position[dimention] += sign
-		@board.crush_dictector(@position)
+		@board.place_rover(self)
 	end
 
 	def execute_instructions(instructions)

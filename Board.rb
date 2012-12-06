@@ -6,17 +6,18 @@ class Board
 		horizontal.times do |i|
 			@board << []
 			vertical.times do
-				@board[i] << []
+				@board[i] << nil
 			end
 		end
-		puts @board = board[0]
+		puts @board
 	end
 
-	def crush_dictector(position)
-		if	@board[position[0]][position[1]] == 0
-			puts "Rovers are crushed!" 
-		else 
-			@board[position[0]][position[1]] = 0
-		end
+	def place_rover(rover)
+		puts "Rovers are crushed!" if @board[rover.position[0]][rover.position[1]]
+		@board[rover.position[0]][rover.position[1]] = rover
+	end
+
+	def remove_rover(rover)
+		@board[rover.position[0]][rover.position[1]] = nil
 	end
 end
