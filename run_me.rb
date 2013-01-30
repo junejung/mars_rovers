@@ -23,6 +23,4 @@ until lines.empty?
 	rover = Rover.new(board, x, y, direction)
 	rover.execute_instructions(instructions)
 	puts "#{rover.position.join(' ')} #{DIRECTION_MATRIX[rover.direction]}\n"
-	puts "#{lines.shift.chomp} (predicted)"
-	puts '-------'
 end

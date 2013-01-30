@@ -1,5 +1,5 @@
 require 'rspec'
-require './controller.rb'
+require './../Controller.rb'
 
 describe 'Controller' do 
 

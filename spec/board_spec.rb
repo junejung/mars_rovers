@@ -1,5 +1,5 @@
 require 'rspec'
-require './board.rb'
+require './../Board.rb'
 
 describe 'Board' do 
 

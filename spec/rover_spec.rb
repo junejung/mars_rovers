@@ -1,5 +1,5 @@
 require 'rspec'
-require './rover.rb'
+require './../rover.rb'
 
 describe 'Rover' do 
 

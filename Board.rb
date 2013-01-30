@@ -9,7 +9,6 @@ class Board
 				@board[i] << nil
 			end
 		end
-		puts @board
 	end
 
 	def place_rover(rover)
